@@ -1,0 +1,20 @@
+pkgname=wzterm
+version=20210502-154244-3f7122cb
+revision=1
+short_desc="Discrete event simulator targeted at networking research"
+maintainer="Dark-Matter7232 <anuragrai4484@gmail.com>"
+license="GPL-3.0-only"
+homepage="https://www.isi.edu/nsnam/ns/"
+depends="tk tcl"
+do_install() {
+        local _bin="https://github.com/wez/wezterm/releases/download/${version}/wezterm-${version}.Ubuntu20.04.tar.xz"
+        $XBPS_FETCH_CMD ${_bin} 
+	bsdtar -xf wez*                               
+        vbin usr/bin/strip-ansi-escapes
+	vbin usr/bin/wezterm
+	vbin usr/bin/wezterm-gui
+        vbin usr/bin/wezterm-mux-server
+        vinstall usr/share/applications/org.wezfurlong.wezterm.desktop 644 usr/share/applications/
+        vinstall usr/share/icons/hicolor/128x128/org.wezfurlong.wezterm.png usr/share/icons/hicolor/128x128/
+        vinstall usr/share/metainfo/org.wezfurlong.wezterm.appdata.xml 
+}
