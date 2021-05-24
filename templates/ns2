@@ -6,12 +6,12 @@ short_desc="Discrete event simulator targeted at networking research"
 maintainer="Dark-Matter7232 <anuragrai4484@gmail.com>"
 license="GPL-3.0-only"
 homepage="https://www.isi.edu/nsnam/ns/"
-makedepends="bsdtar ar"
+depends="to tcl"
 do_install() {
         local _bin="http://archive.ubuntu.com/ubuntu/pool/universe/n/ns2/ns2_2.35+dfsg-3.1_amd64.deb"
         $XBPS_FETCH_CMD ${_bin}
         ar x ns2_2.35+dfsg-3.1_amd64.deb
-	bsdtar -xf data.tar.gz                               
+	bsdtar -xf data.tar.xz                               
 	vmkdir usr/share/doc/ns2
         vmkdir usr/lintian/overrides
         vcopy usr/lintian/overrides/ns2 usr/lintian/overrides
