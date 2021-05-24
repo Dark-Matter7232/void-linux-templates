@@ -7,9 +7,10 @@ license="GPL-3.0-only"
 homepage="https://www.isi.edu/nsnam/ns/"
 depends="tk tcl"
 do_install() {
-        local _bin="https://github.com/wez/wezterm/releases/download/${version}/wezterm-${version}.Ubuntu20.04.tar.xz"
-        $XBPS_FETCH_CMD ${_bin} 
-	bsdtar -xf wez*                               
+        local _bin="https://github.com/wez/wezterm/releases/download/${version}/wezterm-${version}.Ubuntu20.04.deb"
+        $XBPS_FETCH_CMD ${_bin}
+        at x *.deb 
+	bsdtar -xf data.tar.xz                               
         vbin usr/bin/strip-ansi-escapes
 	vbin usr/bin/wezterm
 	vbin usr/bin/wezterm-gui
