@@ -2,16 +2,15 @@
 pkgname=ns2
 version=2.35
 revision=1
+build_style=cmake
 short_desc="Discrete event simulator targeted at networking research"
 maintainer="Dark-Matter7232 <anuragrai4484@gmail.com>"
 license="GPL-3.0-only"
 homepage="https://www.isi.edu/nsnam/ns/"
-depends="tk tcl"
-do_install() {
-        local _bin="http://archive.ubuntu.com/ubuntu/pool/universe/n/ns2/ns2_2.35+dfsg-3.1_amd64.deb"
-        $XBPS_FETCH_CMD ${_bin}
-        ar x ns2_2.35+dfsg-3.1_amd64.deb
-	bsdtar -xf data.tar.xz                               
+depends="tk tcl libpcap"
+destfiles="http://archive.ubuntu.com/ubuntu/pool/universe/n/ns2/ns2_2.35+dfsg-3.1_amd64.deb"
+checksum="dada86f243d221430762741a2e3e38b1f0d9e3ac792656739b25ca5cc1f82e13"
+do_install() {                              
         vman usr/share/man/man1/na.1.gz
         vman usr/share/man/man1/nse.1.gz
         vman usr/man/share/man/man1/nstk.1.gz
