@@ -1,6 +1,6 @@
 #!/bin/bash
 get_latest_version() {
-    wget https://tlauncher.org/jar |
+    wget --content-disposition https://tlauncher.org/jar |
     basename TLauncher-* | 
     sed 's/^.\{10\}//' | 
     rev | 
