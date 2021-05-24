@@ -13,7 +13,7 @@ do_extract() {
 }
 do_install() {
 	vmkdir usr/lib
-	vcopy "*.so" usr/lib
+	vcopy "spotify-adblock.so" usr/lib
         vmkdir etc/spotify-adblock
         vcopy "config.toml" etc/spotify-adblock
 	vinstall ${FILESDIR}/spotify-adblock.desktop 644 usr/share/applications/
