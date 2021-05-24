@@ -1,0 +1,14 @@
+# Template file for spotify-adblock
+pkgname=aminal
+version=2020
+revision=1
+short_desc="Aminal is a modern terminal emulator"
+maintainer="Dark-Matter7232 <anuragrai4484@gmail.com>"
+license="GPL-3.0-only"
+homepage="https://github.com/liamg/aminal"
+do_install() {
+        local _v="2020-01-26-4033a8b"
+        local _bin="https://github.com/liamg/aminal/releases/download/Nightly-develop-${_v}/aminal-linux-amd64"                              
+        $XBPS_FETCH_CMD -o aminal ${_bin}
+        vbin aminal
+}
