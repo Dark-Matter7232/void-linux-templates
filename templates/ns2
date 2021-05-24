@@ -14,7 +14,7 @@ do_install() {
 	bsdtar -xf data.tar.xz                               
         vman usr/share/man/man1/ns.1.gz
         vman usr/share/man/man1/nse.1.gz
-        vman usr/man/share/man/man1/nstk.1.gz
+        vman usr/share/man/man1/nstk.1.gz
         vbin usr/bin/calcdest
 	vbin usr/bin/dec-tr-stat
 	vbin usr/bin/epa-tr-stat
