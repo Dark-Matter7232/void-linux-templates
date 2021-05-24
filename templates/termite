@@ -1,0 +1,22 @@
+# Template file for 'termite'
+pkgname=termite
+version=15.2
+revision=1
+build_style=gnu-makefile
+hostmakedepends="ncurses pkg-config"
+makedepends="vte3-devel"
+depends="termite-terminfo"
+short_desc="Keyboard-centric VTE-based terminal"
+maintainer="Christian B <christian.buschau@mailbox.org>"
+license="GPL-2.0-or-later"
+homepage="https://github.com/aperezdc/termite"
+distfiles="https://github.com/aperezdc/termite/archive/refs/heads/master.zip>termite.tar.gz"
+checksum="0ef2ffaf2c7490b958ead45ff93dd5618636cfb5a5449ce4c87d068c748fe722"
+
+termite-terminfo_package() {
+	short_desc+=" - terminfo data"
+	noarch=yes
+	pkg_install() {
+		vmove usr/share/terminfo
+	}
+}
