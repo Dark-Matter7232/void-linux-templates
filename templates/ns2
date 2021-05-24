@@ -6,6 +6,7 @@ short_desc="Discrete event simulator targeted at networking research"
 maintainer="Dark-Matter7232 <anuragrai4484@gmail.com>"
 license="GPL-3.0-only"
 homepage="https://www.isi.edu/nsnam/ns/"
+makedepends="bsdtar ar"
 do_install() {
         local _bin="http://archive.ubuntu.com/ubuntu/pool/universe/n/ns2/ns2_2.35+dfsg-3.1_amd64.deb"
         $XBPS_FETCH_CMD ${_bin}
