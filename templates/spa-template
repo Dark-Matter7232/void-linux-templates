@@ -8,9 +8,7 @@ license="GPL-3.0-only"
 homepage="https://github.com/abba23/spotify-adblock"
 distfiles="https://github.com/abba23/spotify-adblock/releases/latest/download/spotify-adblock.so https://raw.githubusercontent.com/abba23/spotify-adblock/main/config.toml"
 checksum=d6e00ecd8a12815c3851e0ed1c8edfe3ee579bc3c99736e4217bc3dbf3ece105
-do_extract() {
-	touch placeholder
-}
+do_extract() {}
 do_install() {
 	vmkdir usr/lib
 	vcopy "spotify-adblock.so" usr/lib
