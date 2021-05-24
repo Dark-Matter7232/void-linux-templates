@@ -12,6 +12,8 @@ checksum=d6e00ecd8a12815c3851e0ed1c8edfe3ee579bc3c99736e4217bc3dbf3ece105
 
 do_install() {
 	vmkdir usr/lib
+        vmkdir etc/spotify-adblock
 	vcopy "*.so" usr/lib
+        vcopy "config.toml" etc/spotify-adblock
 	vinstall ${FILESDIR}/spotify-adblock.desktop 644 usr/share/applications/
 }
