@@ -1,0 +1,23 @@
+# Template file for 'brave-bin'
+pkgname=librewolf
+version=88.0.1
+revision=1
+only_for_archs="x86_64"
+short_desc="A fork of Firefox, focused on privacy, security and freedom"
+maintainer="anuragrai4484@gmail.com <anuragrai4484@gmail.com>"
+hostmakedepends="tar xz"
+license="Mozilla Public License Version 2.0"
+homepage="https://librewolf-community.gitlab.io/"
+distfiles="https://download.opensuse.org/repositories/home:/bgstack15:/aftermozilla/Debian_Unstable/amd64/librewolf_${version}-1_amd64.deb"
+checksum=469f7c9ec2000519faed361f33c655371fd39fd05fa467ed9c00ad191cf6d673
+nostrip=yes
+
+do_extract() {
+	mkdir -p ${DESTDIR}
+	ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/librewolf_${version}-1_amd64.deb
+}
+
+do_install() {
+	tar xf data.tar.xz -C ${DESTDIR}
+        rm -rf ${DESTDIR}/lintian
+}
