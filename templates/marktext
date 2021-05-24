@@ -1,0 +1,23 @@
+# Template file for 'marktext'
+pkgname=marktext
+version=0.16.3
+revision=1
+only_for_archs="x86_64"
+short_desc="A simple and elegant open-source markdown editor that focused on speed and usability"
+maintainer="anuragrai4484@gmail.com <anuragrai4484@gmail.com>"
+hostmakedepends="tar xz"
+license="MIT"
+homepage="https://marktext.app/"
+distfiles="https://github.com/marktext/marktext/releases/download/${version}/marktext-amd64.deb"
+checksum=6699d5982364dd3a0ee6b781c606858fcbbfd18d1a018e2a495893ffe7240830
+nostrip=yes
+
+do_extract() {
+	mkdir -p ${DESTDIR}
+	ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/marktext-amd64.deb
+}
+
+do_install() {
+	tar xf data.tar.xz -C ${DESTDIR}
+        rm -rf ${DESTDIR}/lintian
+}
