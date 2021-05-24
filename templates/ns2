@@ -11,13 +11,10 @@ do_install() {
         local _bin="http://archive.ubuntu.com/ubuntu/pool/universe/n/ns2/ns2_2.35+dfsg-3.1_amd64.deb"
         $XBPS_FETCH_CMD ${_bin}
         ar x ns2_2.35+dfsg-3.1_amd64.deb
-	bsdtar -xf data.tar.xz
-        vmove usr/ usr-2/                               
-	vmkdir usr/share/doc/ns2
-        vmkdir usr/share/lintian/overrides
-        vcopy usr-2/share/lintian/overrides/ns2 usr/share/lintian/overrides/
-        vman usr-2/man/share/man1
-        vcopy usr-2/share/doc/ns2/ usr/share/doc/ns2
+	bsdtar -xf data.tar.xz                               
+        vmove usr/share/lintian/overrides/ns2
+        vman usr/man/share/man1
+        vdoc usr/share/doc/ns2/*
         vbin bin/calcdest
 	vbin bin/dec-tr-stat
 	vbin bin/epa-tr-stat
