@@ -1,8 +1,8 @@
-# Template file for 'rsv'
+# Template file for spotify-adblock
 pkgname=spotify-adblock
 version=1.0.0
-build_style=gnu-makefile
-hostmakedepends="cargo"
+revision=1
+build_style=cargo
 short_desc="Spotify adblocker for Linux"
 maintainer="Dark-Matter7232 <anuragrai4484@gmail.com>"
 license="GPL-3.0-only"
@@ -11,5 +11,7 @@ distfiles="https://github.com/abba23/spotify-adblock/archive/v${version}.tar.gz"
 checksum=d6e00ecd8a12815c3851e0ed1c8edfe3ee579bc3c99736e4217bc3dbf3ece105
 
 do_install() {
+	vmkdir usr/lib
+	vcopy "*.so" usr/lib
 	vinstall ${FILESDIR}/spotify-adblock.desktop 644 usr/share/applications/
 }
