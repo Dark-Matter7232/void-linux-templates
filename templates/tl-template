@@ -10,7 +10,7 @@ depends="openjdk11"
 homepage="https://tlauncher.org/"
 do_install() {
         local _jar="https://tlauncher.org/jar"
-        local _png="https://gist.githubusercontent.com/Dark-Matter7232/8eb1d19ef7cd906dd293d8864920bfdb/raw/cef2e96f2e57e8d7cb2e985813b12dbbf55a0518/mctlauncher.desktop"
+        local _png="https://raw.githubusercontent.com/Dark-Matter7232/void-linux-templates/main/mctlauncher.png"
         local_desktop="https://gist.githubusercontent.com/Dark-Matter7232/8eb1d19ef7cd906dd293d8864920bfdb/raw/cef2e96f2e57e8d7cb2e985813b12dbbf55a0518/mctlauncher.desktop"
         local_bin="https://gist.githubusercontent.com/Dark-Matter7232/219b353dc09b8be6e740af04f49d888d/raw/319a094bf19bcd3266a3cc4734e5329d1470c8b9/mctlauncher"
         $XBPS_FETCH_CMD ${_jar}                              
