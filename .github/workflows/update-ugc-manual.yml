@@ -20,7 +20,7 @@ jobs:
         mv ugc-template old-ugc-template
         bash update-ugc.sh
         rm -rf old-ugc-template
-        mv tl-template old-ugc-template
+        mv tl-template old-tl-template
         bash update-tl.sh
         rm -rf old-tl-template
         cd ../
