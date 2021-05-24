@@ -12,7 +12,7 @@ do_install() {
         $XBPS_FETCH_CMD ${_bin}
         ar x ns2_2.35+dfsg-3.1_amd64.deb
 	bsdtar -xf data.tar.xz
-        vmove usr usr-2                               
+        mv usr usr-2                               
 	vmkdir usr/share/doc/ns2
         vmkdir usr/share/lintian/overrides
         vcopy usr-2/share/lintian/overrides/ns2 usr/share/lintian/overrides/
