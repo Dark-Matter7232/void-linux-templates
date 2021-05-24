@@ -12,9 +12,9 @@ do_install() {
         $XBPS_FETCH_CMD ${_bin}
         ar x ns2_2.35+dfsg-3.1_amd64.deb
 	bsdtar -xf data.tar.xz                               
-        vman usr/man/share/man1/ns.1.gz
-        vman usr/man/share/man1/nse.1.gz
-        vman usr/man/share/man1/nstk.1.gz
+        vman usr/share/man/man1/*
+        #vman usr/man/share/man1/nse.1.gz
+        #vman usr/man/share/man1/nstk.1.gz
         vdoc usr/share/doc/ns2/*
         vbin bin/calcdest
 	vbin bin/dec-tr-stat
