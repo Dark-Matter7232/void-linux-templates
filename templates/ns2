@@ -13,9 +13,9 @@ do_install() {
         ar x ns2_2.35+dfsg-3.1_amd64.deb
 	bsdtar -xf data.tar.xz                               
 	vmkdir usr/share/doc/ns2
-        vmkdir usr/lintian/overrides
-        vcopy usr/lintian/overrides/ns2 usr/lintian/overrides
-        vman usr/man/man1
+        vmkdir usr/share/lintin/overrides
+        vcopy usr/share/lintian/overrides/ns2 usr/share/lintian/overrides/
+        vman usr/man/share/man1
         vcopy usr/share/doc/ns2/ usr/share/doc/ns2
         vbin bin/calcdest
 	vbin bin/dec-tr-stat
