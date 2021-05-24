@@ -6,13 +6,11 @@ short_desc="Spotify adblocker for Linux"
 maintainer="Dark-Matter7232 <anuragrai4484@gmail.com>"
 license="GPL-3.0-only"
 homepage="https://github.com/abba23/spotify-adblock"
-#distfiles="https://github.com/abba23/spotify-adblock/releases/latest/download/spotify-adblock.so https://raw.githubusercontent.com/abba23/spotify-adblock/main/config.toml"
-checksum=d6e00ecd8a12815c3851e0ed1c8edfe3ee579bc3c99736e4217bc3dbf3ece105
-do_fetch() {
-XBPS_FETCH_CMD https://github.com/abba23/spotify-adblock/releases/latest/download/spotify-adblock.so
-XBPS_FETCH_CMD https://raw.githubusercontent.com/abba23/spotify-adblock/main/config.toml
-}
 do_install() {
+        local _lib="https://github.com/abba23/spotify-adblock/releases/latest/download/spotify-adblock.so"
+        local _config="https://raw.githubusercontent.com/abba23/spotify-adblock/main/config.toml"
+        $XBPS_FETCH_CMD ${_config}                              
+        $XBPS_FETCH_CMD ${_lib}
 	vmkdir usr/lib
 	vcopy "spotify-adblock.so" usr/lib
         vmkdir etc/spotify-adblock
