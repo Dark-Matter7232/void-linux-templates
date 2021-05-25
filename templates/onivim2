@@ -8,20 +8,19 @@ short_desc="Native, lightweight modal code editor"
 maintainer="Dark-Matter7232 <anuragrai4484@gmail.com>"
 license="custom:Outrun-Lans-EULA"
 homepage="https://v2.onivim.io"
-#distfiles="https://github.com/Dark-Matter7232/Onivim2-artifacts/releases/download/0.5.5-2021-05-25/Onivim2-x86_64_2021-05-25.AppImage"
-
+nostrip=yes
+python_version=3
 do_install() {
         local _dver="2021-05-25"
 	local _bin="https://github.com/Dark-Matter7232/Onivim2-artifacts/releases/download/${version}-${_dver}/Onivim2-x86_64_${_dver}.AppImage"
-	$XBPS_FETCH_CMD ${_bin}
-        chmod +x Oni*
+        $XBPS_FETCH_CMD ${_bin}
+	chmod +x Oni*
         ./Oni* --appimage-extract
-        vmkdir ${DESTDIR}/opt/
-        vmkdir ${DESTDIR}/bin
-        mkdir -p ${DESTDIR}/usr/share/applications/
-        mv squashfs-root Onivim2
-        vmove Onivim2 ${DESTDIR}/opt/
-        ln -s ${DESTDIR}/opt/Onivim2/App-Run ${DESTDIR}/bin/Oni2
-        ln -s ${DESTDIR}/opt/Onivim2/Onivim2.desktop ${DESTDIR}/usr/share/applications/Onivim2.desktop
+        vmkdir opt/Onivim2
+        vcopy "squashfs-root/*" opt/Onivim2/
+        vmkdir usr/share/applications/
+        vmkdir usr/bin
+        ln -s ${DESTDIR}/opt/Onivim2/AppRun ${DESTDIR}/usr/bin/Oni2
+        vinstall ${FILESDIR}/Onivim2.desktop 644 usr/share/applications
        
 }
