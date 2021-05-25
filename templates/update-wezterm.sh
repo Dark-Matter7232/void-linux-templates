@@ -9,6 +9,6 @@ get_latest_v() {
     grep '"tag_name":' |                                            # Get tag line
     sed -E 's/.*"([^"]+)".*/\1/'                                   # Pluck JSON value
 }
-mv wezterm wezterm-old
+mv wezterm old-wezterm
 sed -r -e "s/(version\s*=\s*).*/\1$(get_latest_version)/" -e "s/(_v\s*=\s*).*/\1$(get_latest_v)/" old-wezterm >> wezterm
-rm -rf wezterm-old
+rm -rf old-wezterm
