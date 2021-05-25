@@ -9,7 +9,6 @@ maintainer="Dark-Matter7232 <anuragrai4484@gmail.com>"
 license="custom:Outrun-Lans-EULA"
 homepage="https://v2.onivim.io"
 nostrip=yes
-python_version=0.5.5
 do_install() {
         local _dver=2021-05-25
 	local _bin="https://github.com/Dark-Matter7232/Onivim2-artifacts/releases/download/${version}-${_dver}/Onivim2-x86_64_${_dver}.AppImage"
@@ -24,3 +23,4 @@ do_install() {
         vinstall ${FILESDIR}/Onivim2.desktop 644 usr/share/applications
        
 }
+python_version=2
