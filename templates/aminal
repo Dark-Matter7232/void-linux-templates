@@ -1,14 +1,14 @@
-# Template file for spotify-adblock
+# Template file for 'aminal'
 pkgname=aminal
-version=2020
+version=2021-05-25
 revision=1
-short_desc="Aminal is a modern terminal emulator"
-maintainer="Dark-Matter7232 <anuragrai4484@gmail.com>"
-license="GPL-3.0-only"
+build_style=go
+go_import_path=github.com/liamg/aminal
+makedepends="MesaLib-devel libX11-devel libXcursor-devel libXrandr-devel
+ libXinerama-devel libXi-devel"
+short_desc="Modern terminal emulator implemented in Golang and utilising OpenGL"
+maintainer="SolitudeSF <solitudesf@protonmail.com>"
+license="GPL-3.0-or-later"
 homepage="https://github.com/liamg/aminal"
-do_install() {
-        local _v="2020-01-26-4033a8b"
-        local _bin="https://github.com/liamg/aminal/releases/download/Nightly-develop-${_v}/aminal-linux-amd64"                              
-        $XBPS_FETCH_CMD -o aminal ${_bin}
-        vbin aminal
-}
+distfiles="${homepage}/archive/refs/heads/master.zip"
+checksum=ed59927531e7d585a42366c455e491a846c7e23ae079fa1d10d43fdd3a92eb65
