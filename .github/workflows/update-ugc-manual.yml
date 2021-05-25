@@ -16,15 +16,7 @@ jobs:
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
     - name: Update ugc template
       run: |
-        cd templates
-        mv ugc-template old-ugc-template
-        bash update-ugc.sh
-        rm -rf old-ugc-template
-        mv tl-template old-tl-template
-        bash update-tl.sh
-        rm -rf old-tl-template
-        rm -rf TL*
-        cd ../
+        bash templates/*.sh
         git config --local user.email "dark-matter7232@users.noreply.github.com"
         git config --local user.name "Dark-Matter7232"
         git add -A
