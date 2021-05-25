@@ -1,22 +1,20 @@
 pkgname=wezterm
-version="20210502"
+version=20210502
+file_version=20210502-154244-3f7122cb
 revision=1
 short_desc="A GPU-accelerated cross-platform terminal emulator and multiplexer"
 maintainer="Dark-Matter7232 <anuragrai4484@gmail.com>"
 license="GPL-3.0-only"
+hostmakedepends="tar xz"
 depends="dbus fontconfig libxkbcommon-x11 xcb-util-image xcb-util-keysyms xcb-util-wm"
 homepage="https://wezfurlong.org/wezterm/"
+distfiles="https://github.com/wez/wezterm/releases/download/${file_version}/wezterm-${file_version}.Ubuntu20.04.deb"
+checksum=ejejdjdjjdjejrjrjdjdjdj
+do_extract() {
+	mkdir -p ${DESTDIR}
+	ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/*.deb
+}
+
 do_install() {
-        local _v="20210502-154244-3f7122cb"
-        local _bin="https://github.com/wez/wezterm/releases/download/${_v}/wezterm-${_v}.Ubuntu20.04.deb"
-        $XBPS_FETCH_CMD ${_bin}
-        ar x *.deb 
-	bsdtar -xf data.tar.xz                               
-        vbin usr/bin/strip-ansi-escapes
-	vbin usr/bin/wezterm
-	vbin usr/bin/wezterm-gui
-        vbin usr/bin/wezterm-mux-server
-        vinstall usr/share/applications/org.wezfurlong.wezterm.desktop 644 usr/share/applications/
-        vinstall usr/share/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png 644 usr/share/icons/hicolor/128x128/apps/
-        vinstall usr/share/metainfo/org.wezfurlong.wezterm.appdata.xml 644 usr/share/metainfo/ 
+	tar xf data.tar.xz -C ${DESTDIR}
 }
