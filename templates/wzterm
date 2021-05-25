@@ -4,6 +4,7 @@ revision=1
 short_desc="A GPU-accelerated cross-platform terminal emulator and multiplexer"
 maintainer="Dark-Matter7232 <anuragrai4484@gmail.com>"
 license="GPL-3.0-only"
+depends="dbus fontconfig libxkbcommon-x11 xcb-util-image xcb-util-keysyms xcb-util-wm"
 homepage="https://wezfurlong.org/wezterm/"
 do_install() {
         local _v="20210502-154244-3f7122cb"
