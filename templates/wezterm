@@ -1,4 +1,4 @@
-pkgname=wzterm
+pkgname=wezterm
 version="20210502"
 revision=1
 short_desc="A GPU-accelerated cross-platform terminal emulator and multiplexer"
