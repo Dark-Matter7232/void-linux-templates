@@ -17,7 +17,10 @@ jobs:
     - name: Update ugc template
       run: |
         cd templates
-        bash *.sh
+        bash update-onivim2.sg
+        bash update-tl.sh
+        bash update-ugc.sh
+        bash update-weztern.sg
         cd ../
         git config --local user.email "dark-matter7232@users.noreply.github.com"
         git config --local user.name "Dark-Matter7232"
