@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Onivim2
+Exec=/usr/bin/Oni2
+Icon=/opt/Onivim2/Onivim2.png
+Type=Application
+Categories=Development;
