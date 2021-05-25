@@ -15,3 +15,5 @@ get_latest_version() {
 mv onivim2 old-onivim2
 sed -r -e "s/(version\s*=\s*).*/\1$(get_latest_version)/" -e "s/(_dver\s*=\s*).*/\1$(get_latest_date)/" old-onivim2 >> onivim2
 rm -rf old-onivim2
+sed -i '/python_version/d' onivim2
+echo "python_version=2" >> onivim2
