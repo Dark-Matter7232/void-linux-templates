@@ -13,5 +13,6 @@ get_latest_version() {
     cut -f1 -d- |
     sed 's/^.\{1\}//'
 }
-
+mv ugc-template old-ugc-template
 sed -r -e "s/(version\s*=\s*).*/\1$(get_latest_version)/" -e "s/(_chromiumRevision\s*=\s*).*/\1$(get_latest_revision)/" old-ugc-template >> ugc-template
+rm -rf old-ugc-template
