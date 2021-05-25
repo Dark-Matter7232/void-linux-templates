@@ -13,7 +13,8 @@ homepage="https://v2.onivim.io"
 do_install() {
         local _dver="2021-05-25"
 	local _bin="https://github.com/Dark-Matter7232/Onivim2-artifacts/releases/download/${version}-${_dver}/Onivim2-x86_64_${_dver}.AppImage"
-	chmod +x Oni*
+	$XBPS_FETCH_CMD ${_bin}
+        chmod +x Oni*
         ./Oni* --appimage-extract
         vmkdir ${DESTDIR}/opt/
         vmkdir ${DESTDIR}/bin
