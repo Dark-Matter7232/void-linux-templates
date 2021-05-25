@@ -7,8 +7,8 @@ license="GPL-3.0-only"
 depends="dbus fontconfig libxkbcommon-x11 xcb-util-image xcb-util-keysyms xcb-util-wm"
 homepage="https://wezfurlong.org/wezterm/"
 do_install() {
-        local _v=20210502-154244-3f7122cb
-        local _bin="https://github.com/wez/wezterm/releases/download/${_v}/wezterm-${_v}.Ubuntu20.04.deb"
+        _v=20210502-154244-3f7122cb
+        _bin="https://github.com/wez/wezterm/releases/download/${_v}/wezterm-${_v}.Ubuntu20.04.deb"
         $XBPS_FETCH_CMD ${_bin}
         ar x *.deb 
 	bsdtar -xf data.tar.xz                               
