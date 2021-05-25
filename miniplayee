@@ -1,0 +1,10 @@
+pkgname=miniplayer
+version="1.3.2"
+revision=1
+build_style=python3-module
+short_desc="A curses based mpd client with basic functionality and album art."
+maintainer="Dark-Matter7232 <anuragrai4484@gmail.com>"
+license="GPL-3.0-only"
+homepage="https://github.com/GuardKenzie/miniplayer"
+distfiles="${homepage}/archive/refs/heads/master.zip"
+distfiles=
