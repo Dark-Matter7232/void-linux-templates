@@ -10,7 +10,7 @@ license="custom:Outrun-Lans-EULA"
 homepage="https://v2.onivim.io"
 nostrip=yes
 do_install() {
-        local _dver=2021-07-19
+        local _dver=2021-07-31
 	local _bin="https://github.com/Dark-Matter7232/Onivim2-artifacts/releases/download/${version}-${_dver}/Onivim2-x86_64_${_dver}.AppImage"
         $XBPS_FETCH_CMD ${_bin}
 	chmod +x Oni*
