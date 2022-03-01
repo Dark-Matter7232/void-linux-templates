@@ -1,6 +1,6 @@
 #Template file for mctlauncher
 pkgname=mctlauncher
-version=*
+version=2.841
 revision=1
 short_desc="Custom launcher for minecraft"
 maintainer="Dark-Matter7232 <anuragrai4484@gmail.com>"
