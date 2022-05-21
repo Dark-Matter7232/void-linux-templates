@@ -2,7 +2,7 @@
 _chromiumRevision=982481
 
 pkgname=ungoogled-chromium-marmaduke
-version=101.0.4951.41
+version=101.0.4951.67
 revision=1
 maintainer="mkf <makefile@riseup.net>"
 homepage="https://github.com/macchrome/linchrome"
