@@ -1,5 +1,5 @@
 pkgname=miniplayer
-version=1.6.1
+version=1.7.0
 revision=1
 build_style=python3-module
 short_desc="A curses based mpd client with basic functionality and album art."
