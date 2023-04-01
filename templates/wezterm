@@ -1,6 +1,6 @@
 pkgname=wezterm
-version=20230320
-file_version=20230320-124340-559cb7b0
+version=20230326
+file_version=20230326-111934-3666303c
 revision=1
 short_desc="A GPU-accelerated cross-platform terminal emulator and multiplexer"
 maintainer="Dark-Matter7232 <anuragrai4484@gmail.com>"
