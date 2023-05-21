@@ -1,8 +1,8 @@
 # Template file for 'ungoogled-chromium-marmaduke'
-_chromiumRevision=112.0.5615.169
+_chromiumRevision=113.0.5672.126
 
 pkgname=ungoogled-chromium-marmaduke
-version=112.5615.169
+version=113.5672.126
 revision=1
 maintainer="mkf <makefile@riseup.net>"
 homepage="https://github.com/macchrome/linchrome"
